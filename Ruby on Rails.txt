@@ -1,34 +1,29 @@
-Tutorial on Ruby on Rails
+irb (Interactive Ruby)
+def greeting
+out="welcome to ruby"
+puts out
+end
+>greeting
 
-*****************How to Install Ruby on Rails********************
-Follow these Steps
-STEP-A
+>exit
+=============================
 
-1)Install the rubyinstaller-devkit-2.4.4-2-x64
-2)ruby --version
-3)gem intall rails
-4)rails --version
-5)cd/
-6)c:\> rails new blog
-7)cd blog/bin
-8)rails s
-9)Open any browser an run 
-10)localhost:3000
+C:\Windows\System32>irb
+irb(main):001:0> def greeting
+irb(main):002:1> out="Welcome to Ruby"
+irb(main):003:1> puts out
+irb(main):004:1> end
+=> :greeting
+irb(main):005:0>
 
-STEP-B
+==================================
+Ruby works on a MVC Model
+M=Model (Database)
+V=View (Interface)
+C=Controller (Logic)
 
-After Successfully Installed Ruby and Rails
-
-Now you need to install the MVC (Model View Controller)
-For that you should go to bog=>bin folder
 ====================================
-C:\blog\bin>rails generate controller xxx indexxx
-Here i created welcome folder in this i have given index as a file name
-You can create any folder and any name related to your website
-
 C:\blog\bin>rails generate controller welcome index
-
-As you can see like this.
       create  app/controllers/welcome_controller.rb
        route  get 'welcome/index'
       invoke  erb
@@ -46,21 +41,33 @@ As you can see like this.
       create      app/assets/stylesheets/welcome.scss
 	  
 =================================
-STEP-C
 
 Got to config Folder => /* routes.rb
 Open /* routes.rb and
 Add this command
 root 'welcome#index'
 
+
 =====================================
+erb=> Executable Ruby
+
+==================================
+2018-Aug-08
+CRUD=Create, Read, Update, Delete
+
+RESTFUL is an API
+
+INDEX
+NEW
+CREATE
+
 
 ==================
-STEP-D
+Make index.html.erb page and to add the files to views in the 
+welcome folder i.e index1.html.erb files
 
-Make html.erb page and add to
-xxx_controller.rb file
-add the files i.e html.erb files
+xxx_controller.rb file i.e here #welcome_controller.rb
+add the files to this file
 here,
  def index1
  end
@@ -71,37 +78,29 @@ and in route.rb file
 remember, we add 2 files index1.html.erb and index2.html.erb
 Rails.application.routes.draw do
 
-##Add if you need multiple pages in ruby on rails
 get 'index1'=>"xxx#index1"
 get 'index2'=>"xxx#index2"
 
-and in just below,
-
+and in below,
 root 'xxx#index'
 root 'xxx#index1'
 root 'xxx#index2'
+
 end
 
 
 =========================================
+2018-Aug-09
 
+#To create a Database in Ruby on Rails follow the following command
+rails generate scaffold students name:string age:integer skills:string
 
-#To create a Database in Ruby on Rails follow the following command.
-
-C:\blog\bin>rails generate scaffold students name:string age:integer skills:string
-
-
-##To delete a Database in Ruby on Rails follow the following command.
-
-
-C:\blog\bin>rails d scaffold students name:string age:integer skills:string
 #and type :
-C:\blog\bin>rails db:migrate
+rails db:migrate
 
 #Once Successfully created a students Database and related Fields
 #Start the Rails server 
-
-C:\blog\bin>rails server or rails s
+rails server or rails s
 
 #Then goto browser and type:
 localhost:3000/students

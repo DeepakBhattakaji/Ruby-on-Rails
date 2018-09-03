@@ -1,0 +1,23 @@
+****************2018-Aug-28*****************
+Create blank migration
+
+rails g  migration AddcolumnLastnameToStudents Lastname:string
+
+Add to def change line 
+class AddColumnLastnameToStudents < ActiveRecord::Migration[5.2]
+  def change
+    add_column :students, :Lastname, :string
+  end
+end
+
+
+****************************
+To reload the Database 
+
+irb(main):006:0>reload!
+
+To Update the Newely created Column i.e Lastname
+
+irb(main):009:0> Student.find(1).update(Lastname:"Bhatta")
+
+

@@ -1,0 +1,106 @@
+2018-Aug-14
+===========================
+Show the database Table Columns and Rows
+===========================
+rails console
+
+//Database Table Name
+
+Student.all
+
+This will show you in inproper form so you need to add a new gems
+
+To install a new gem file
+
+add one command at the end of line to Gemfile
+
+gem'hirb'
+
+
+and go to cmd
+bundle install
+Type rails console
+
+Hirb.enable
+
+Lpu.all
+Student.all
+
+
+To delete Database
+
+rails db:rollback
+
+
+==========================
+#To delete a Database in Ruby on Rails follow the following command.
+
+C:\blog\bin>rails d scaffold students name:string age:integer skills:string
+
+Student.first # Search for first Row of the database
+Student.second # Search for second Row of the database 
+Student.last  # Search for last Row of the database
+
+Student.find(15) # Search for 15th Row of the database
+
+Student.first.delete 
+Student.delete(15)
+
+Student.first.update(name:"Deepak") #(Nameofthefield:"Value")
+
+irb(main):009:0> Student.find(1).update(Lastname:"Bhatta")
+
+# To insert a  data into table
+studentnew=Student.new
+
+irb(main):012:0> studentnew.name="Sonu"
+=> "Sonu"
+irb(main):013:0> studentnew.age="20"
+=> "20"
+irb(main):014:0> studentnew.school="LPU"
+=> "LPU"
+irb(main):015:0> studentnew.skills="C#"
+=> "C#"
+
+studentnew
+
+studentnew.save
+
+student.all
+
+===========================
+
+Student.create(name: "Nashrat", age: 18, school: "LPU", skills: "JAVA")
+
+Student.find(2,3)
+
+
+========================
+rails generate model Student
+#creates only a model not the interface
+
+
+====================================
+Delete Database Table
+==================================
+exit from irb(main) then Type
+
+rails db:migrate:down VERSION:"20180816101246"
+rails db:migrate:delete VERSION:"20180816101246"
+
+## OR
+rails d model College
+
+
+college.create(name:"admin",age:24)
+
+
+
+==================================
+
+To delete a Database from sqlite.
+
+C:\blog\bin>rails dbconsole
+sqlite>delete from schema_migrations where version='20180814095404';
+
+

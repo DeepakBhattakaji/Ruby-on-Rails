@@ -1,0 +1,52 @@
+************************2018-August-23
+1. rails generate migration AddColumnFirstnameToStudent Lastname:string
+
+
+
+Now go to sublime =>db=>migrate=> in AddColumnFirstnameToStudent file
+Write::
+
+defchange
+	add_Column :students, :FirstName, :string
+
+2. rails db:migrate
+
+2. rails console
+
+3. irb(main):003:0> ActiveRecord::Base.connection.tables
+
+4. irb(main):009:0> Student.find(1).update(Lastname:"Bhatta")
+
+5. Student.all
+
+=======================
+C:\blog\bin>rails db:migrate:status
+
+
+
+
+**************Modify Column******************
+
+rails generate migration RenameColumnToLastname 
+
+C:\blog\bin>rails db:migrate
+
+
+Add to def change
+
+class RenameColumnLastnameToStudent < ActiveRecord::Migration[5.2]
+  def change
+  	rename_column :students, :Lastname, :Last_Name
+  end
+end
+
+
+**************Delete Column******************
+
+C:\blog\bin>rails generate migration RemoveColumnLast_NameToStudent
+
+
+
+
+
+
